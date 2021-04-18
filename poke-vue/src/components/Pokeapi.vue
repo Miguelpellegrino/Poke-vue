@@ -13,7 +13,7 @@
       </div>
      
       <div v-if="data.name" class="row justify-content-center">
-        <div class="col-md-4 ">
+        <div class="col-md-4">
           <h1 class="text-center text-uppercase">{{data.name}}</h1>
           <div class="card" >
             <img v-if="data.sprites.other.dream_world.front_default" :src="data.sprites.other.dream_world.front_default"
@@ -25,10 +25,31 @@
               alt="Card image cap" 
               style="width: 100%;">
 
-            <div class="card-body">
-              <p><span class="badge badge-light">{{data.types[0].type.name}}</span></p>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card-body text-center">
+              <span class="badge badge-pill badge-light" style="font-size: 30px;">{{data.types[0].type.name}}</span>
+              <span v-if="data.types[1]" class="badge badge-pill badge-light" style="font-size: 30px;">{{data.types[1].type.name}}</span>
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">HP</th>
+                    <th scope="col">ATK</th>
+                    <th scope="col">DEF</th>
+                    <th scope="col">ATK.SP</th>
+                    <th scope="col">DEF.PS</th>
+                    <th scope="col">AGI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{data.stats[0].base_stat}}</th>
+                    <th scope="row">{{data.stats[1].base_stat}}</th>
+                    <th scope="row">{{data.stats[2].base_stat}}</th>
+                    <th scope="row">{{data.stats[3].base_stat}}</th>
+                    <th scope="row">{{data.stats[4].base_stat}}</th>
+                    <th scope="row">{{data.stats[5].base_stat}}</th>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
